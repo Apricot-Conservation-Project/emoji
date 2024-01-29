@@ -1,6 +1,46 @@
+macro_rules! build {($($k:ident => $v:literal),+ $(,)?) => {$(#[doc = "`"] #[doc = $v] #[doc = "`"] pub const $k: &str = $v;)+}}
+pub mod to_mindustry {
+    pub mod named {
+        build! {
+        ARKYCITE => "",
+        CRYOFLUID => "",
+        CYANOGEN => "",
+        GALLIUM => "",
+        HYDROGEN => "",
+        NEOPLASM => "",
+        NITROGEN => "",
+        OIL => "",
+        OZONE => "",
+        SLAG => "",
+        WATER => "",
+        BERYLLIUM => "",
+        BLAST_COMPOUND => "",
+        CARBIDE => "",
+        COAL => "",
+        COPPER => "",
+        DORMANT_CYST => "",
+        FISSILE_MATTER => "",
+        GRAPHITE => "",
+        LEAD => "",
+        METAGLASS => "",
+        OXIDE => "",
+        PHASE_FABRIC => "",
+        PLASTANIUM => "",
+        PYRATITE => "",
+        SAND => "",
+        SCRAP => "",
+        SILICON => "",
+        SPORE_POD => "",
+        SURGE_ALLOY => "",
+        THORIUM => "",
+        TITANIUM => "",
+        TUNGSTEN => "",
+        }
+    }
+}
+
 /// get discord emojis by name (only has icons because)
 pub mod named {
-    macro_rules! build {($($k:ident => $v:literal),+ $(,)?) => {$(#[doc = "`"] #[doc = $v] #[doc = "`"] pub const $k: &str = $v;)+}}
     build! {
         LIST => "<:list:1182123020240830534>",
         DISCORD => "<:discord:1182124785371729990>",
