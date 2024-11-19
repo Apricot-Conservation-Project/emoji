@@ -8,3 +8,25 @@ edition = "2021"
 [dependencies]
 mindus = { version = "5.0.14", default-features = false }
 phf = { version = "0.11.2", features = ["macros"] }
+anyhow = { version = "1.0.93", optional = true }
+tokio = { version = "1.28.2", features = [
+    "net",
+    "sync",
+    "rt",
+    "parking_lot",
+], default-features = false, optional = true }
+serenity = { version = "0.12", features = [
+    "builder",
+    "client",
+    "rustls_backend",
+    "gateway",
+    "model",
+], default-features = false, optional = true }
+poise = { git = "https://github.com/fgardt/poise", branch = "feat/user_apps", optional = true }
+
+[features]
+build = ["serenity", "poise", "tokio", "anyhow"]
+
+[patch.crates-io]
+serenity = { git = "https://github.com/serenity-rs/serenity" }
+mindus = { git = "https://github.com/bend-n/mindus" }

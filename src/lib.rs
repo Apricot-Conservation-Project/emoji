@@ -1,589 +1,68 @@
-macro_rules! build {($($k:ident => $v:literal),+ $(,)?) => {$(#[doc = "`"] #[doc = $v] #[doc = "`"] pub const $k: &str = $v;)+}}
+#[macro_export]
+#[rustfmt::skip]
+macro_rules! the_crate { {} => { #[allow(dead_code)] mod emoji {
 pub mod to_mindustry {
     pub mod named {
-        build! {
-        // '(.)' => "<:([^:]+):.+"
-        // \U$2 => "$1",
-        SHIP_ASSEMBLER => "", TUNGSTEN_WALL => "", BLAST_DOOR => "", SHIP_REFABRICATOR => "", REINFORCED_LIQUID_CONTAINER => "", TANK_ASSEMBLER => "", TANK_FABRICATOR => "", TANK_REFABRICATOR => "", PRIME_REFABRICATOR => "", MALIGN => "", MECH_REFABRICATOR => "", LUSTRE => "", REINFORCED_LIQUID_JUNCTION => "", REINFORCED_BRIDGE_CONDUIT => "", TITAN => "", REINFORCED_LIQUID_TANK => "", REINFORCED_SURGE_WALL_LARGE => "", REINFORCED_CONDUIT => "", SMITE => "", REINFORCED_SURGE_WALL => "", BASIC_ASSEMBLER_MODULE => "", TUNGSTEN_WALL_LARGE => "", REINFORCED_PUMP => "", SHIELDED_WALL => "", SHIP_FABRICATOR => "", BERYLLIUM_WALL_LARGE => "", CARBIDE_WALL_LARGE => "", BREACH => "", SUBLIMATE => "", BERYLLIUM_WALL => "", MECH_FABRICATOR => "", REINFORCED_LIQUID_ROUTER => "", MECH_ASSEMBLER => "", AFFLICT => "", DISPERSE => "", SCATHE => "", CARBIDE_WALL => "", CLEROI => "", LOCUS => "", OMURA => "", RISSO => "", MANIFOLD => "", COLLARIS => "", EMANATE => "", ANTHICUS => "", SPIROCT => "", TECTA => "", QUELL => "", MACE => "", INCITE => "", LATUM => "", ANTHICUS_MISSILE => "", OXYNOE => "", OBVIATE => "", ALPHA => "", DISRUPT_MISSILE => "", RENALE => "", ASSEMBLY_DRONE => "", VANQUISH => "", AVERT => "", PRECEPT => "", SCATHE_MISSILE => "", QUELL_MISSILE => "", BETA => "", MERUI => "", EVOKE => "", AEGIRES => "", STELL => "", DISRUPT => "", ELUDE => "", NAVANAX => "", CONQUER => "", LARGE_PAYLOAD_MASS_DRIVER => "", DECONSTRUCTOR => "", REINFORCED_PAYLOAD_CONVEYOR => "", CONSTRUCTOR => "", SMALL_DECONSTRUCTOR => "", REINFORCED_PAYLOAD_ROUTER => "", LARGE_CONSTRUCTOR => "", DUCTBRIDGE => "", TURBINE_CONDENSER => "", CORE_CITADEL => "", SLAG_HEATER => "", SHOCKWAVE_TOWER => "", BEAM_LINK => "", REINFORCED_VAULT => "", PHASE_SYNTHESIZER => "", CLIFF_CRUSHER => "", HEAT_SOURCE => "", ELECTRIC_HEATER => "", BEAM_TOWER => "", UNIT_CARGO_LOADER => "", SLAG_INCINERATOR => "", UNIT_REPAIR_TOWER => "", BEAM_NODE => "", HEAT_ROUTER => "", REINFORCED_CONTAINER => "", ATMOSPHERIC_CONCENTRATOR => "", CARBIDE_CRUCIBLE => "", CHEMICAL_COMBUSTION_CHAMBER => "", BUILD_TOWER => "", IMPACT_DRILL => "", PYROLYSIS_GENERATOR => "", CORE_BASTION => "", ERUPTION_DRILL => "", LARGE_PLASMA_BORE => "", PLASMA_BORE => "", NEOPLASIA_REACTOR => "", CORE_ACROPOLIS => "", SILICON_ARCFURNACE => "", LARGE_SHIELD_PROJECTOR => "", FLUX_REACTOR => "", REGEN_PROJECTOR => "", HEAT_REDIRECTOR => "", ELECTROLYZER => "", CYANOGEN_SYNTHESIZER => "", SURGE_CRUCIBLE => "", OXIDATION_CHAMBER => "", RADAR => "", PHASE_HEATER => "", VENT_CONDENSER => "", ADDITIVE_RECONSTRUCTOR => "", AIR_FACTORY => "", ANTUMBRA => "", ARC => "", ARKYID => "", ARMORED_CONVEYOR => "", ARMORED_DUCT => "", ATRAX => "", BATTERY => "", BATTERY_LARGE => "", BLAST_DRILL => "", BLAST_MIXER => "", BRIDGE_CONDUIT => "", BRIDGE_CONVEYOR => "", BRYDE => "", CANVAS => "", COAL_CENTRIFUGE => "", COMBUSTION_GENERATOR => "", CONDUIT => "", CONTAINER => "", CONVEYOR => "", COPPER_WALL => "", COPPER_WALL_LARGE => "", CORE_FOUNDATION => "", CORE_NUCLEUS => "", CORE_SHARD => "", CORVUS => "", CRAWLER => "", CRYOFLUID_MIXER => "", CULTIVATOR => "", CYCLONE => "", CYERCE => "", DAGGER => "", DIFFERENTIAL_GENERATOR => "", DIODE => "", DISASSEMBLER => "", DISTRIBUTOR => "", DOOR => "", DOOR_LARGE => "", DUCT => "", DUO => "", ECLIPSE => "", EXPONENTIAL_RECONSTRUCTOR => "", FLARE => "", FORCE_PROJECTOR => "", FORESHADOW => "", FORTRESS => "", FUSE => "", GAMMA => "", GRAPHITE_PRESS => "", GROUND_FACTORY => "", HAIL => "", HORIZON => "", HYPER_PROCESSOR => "", ILLUMINATOR => "", IMPACT_REACTOR => "", IMPULSE_PUMP => "", INCINERATOR => "", INTERPLANETARY_ACCELERATOR => "", INVERTED_SORTER => "", ITEM_SOURCE => "", ITEM_VOID => "", JUNCTION => "", KILN => "", LANCER => "", LARGE_LOGIC_DISPLAY => "", LASER_DRILL => "", LAUNCH_PAD => "", LIQUID_CONTAINER => "", LIQUID_JUNCTION => "", LIQUID_ROUTER => "", LIQUID_SOURCE => "", LIQUID_TANK => "", LIQUID_VOID => "", LOGIC_DISPLAY => "", LOGIC_PROCESSOR => "", MASS_DRIVER => "", MECHANICAL_DRILL => "", MECHANICAL_PUMP => "", MEGA => "", MELTDOWN => "", MELTER => "", MEMORY_BANK => "", MEMORY_CELL => "", MENDER => "", MEND_PROJECTOR => "", MESSAGE => "", MICRO_PROCESSOR => "", MINKE => "", MONO => "", MULTIPLICATIVE_RECONSTRUCTOR => "", MULTI_PRESS => "", NAVAL_FACTORY => "", NOVA => "", OCT => "", OIL_EXTRACTOR => "", OVERDRIVE_DOME => "", OVERDRIVE_PROJECTOR => "", OVERFLOW_GATE => "", PARALLAX => "", PAYLOAD_CONVEYOR => "", PAYLOAD_LOADER => "", PAYLOAD_MASS_DRIVER => "", PAYLOAD_ROUTER => "", PAYLOAD_SOURCE => "", PAYLOAD_UNLOADER => "", PAYLOAD_VOID => "", PHASE_CONDUIT => "", PHASE_CONVEYOR => "", PHASE_WALL => "", PHASE_WALL_LARGE => "", PHASE_WEAVER => "", PLASTANIUM_COMPRESSOR => "", PLASTANIUM_CONVEYOR => "", PLASTANIUM_WALL => "", PLASTANIUM_WALL_LARGE => "", PLATED_CONDUIT => "", PNEUMATIC_DRILL => "", POLY => "", POWER_NODE => "", POWER_NODE_LARGE => "", PULSAR => "", PULSE_CONDUIT => "", PULVERIZER => "", PYRATITE_MIXER => "", QUAD => "", QUASAR => "", REIGN => "", RETUSA => "", RIPPLE => "", ROTARY_PUMP => "", ROUTER => "", RTG_GENERATOR => "", SALVO => "", SCATTER => "", SCEPTER => "", SCORCH => "", SCRAP_WALL => "", SCRAP_WALL_GIGANTIC => "", SCRAP_WALL_HUGE => "", SCRAP_WALL_LARGE => "", SEGMENT => "", SEI => "", SEPARATOR => "", SHIELD_PROJECTOR => "", SILICON_CRUCIBLE => "", SILICON_SMELTER => "", SOLAR_PANEL => "", SOLAR_PANEL_LARGE => "", SORTER => "", SPECTRE => "", SPORE_PRESS => "", STEAM_GENERATOR => "", SURGE_CONVEYOR => "", SURGE_SMELTER => "", SURGE_TOWER => "", SURGE_WALL => "", SURGE_WALL_LARGE => "", SWARMER => "", SWITCH => "", TETRATIVE_RECONSTRUCTOR => "", THERMAL_GENERATOR => "", THORIUM_REACTOR => "", THORIUM_WALL => "", THORIUM_WALL_LARGE => "", THRUSTER => "", TITANIUM_CONVEYOR => "", TITANIUM_WALL => "", TITANIUM_WALL_LARGE => "", TOXOPID => "", TSUNAMI => "", UNDERFLOW_GATE => "", UNLOADER => "", VAULT => "", VELA => "", WATER_EXTRACTOR => "", WAVE => "", WORLD_CELL => "", WORLD_MESSAGE => "", WORLD_PROCESSOR => "", ZENITH => "", ADD => "", ADMIN => "", ANDROID => "", ATTACK => "", BOOK => "", BOOK_OPEN => "", BOX => "", CANCEL => "", CHART_BAR => "", CHAT => "", COMMAND_ATTACK => "", COMMAND_RALLY => "", COPY => "", CRAFTING => "", DEFENSE => "", DIAGONAL => "", DISCORD => "", DISTRIBUTION => "", DOWNLOAD => "", DOWN_OPEN => "", EDIT => "", EDITOR => "", EFFECT => "", ERASER => "", EXIT => "", EXPORT => "", EYE => "", EYE_OFF => "", FILE => "", FILE_IMAGE => "", FILE_TEXT => "", FILL => "", FILTER => "", FILTERS => "", FLIP_X => "", FLIP_Y => "", FOLDER => "", GITHUB => "", GITHUB_SQUARE => "", GOOGLE_PLAY => "", GRID => "", HAMMER => "", HOME => "", HOST => "", DOWN => "", IMAGE => "", INFO => "", INFO_CIRCLE => "", ITCHIO => "", LAYERS => "", LEFT => "", LEFT_OPEN => "", LINE => "", LINK => "", LIQUID => "", LIST => "", LOCK => "", LOCK_OPEN => "", LOGIC => "", MAP => "", MOVE => "", NONE => "", OK => "", PASTE => "", PAUSE => "", PENCIL => "", PICK => "", PLANE => "", PLANET => "", PLAY => "", PLAYERS => "", POWER => "", PRODUCTION => "", PVP => "", REDDIT => "", REDO => "", REFRESH => "", RESIZE => "", RIGHT => "", RIGHT_OPEN => "", ROTATE => "", SAVE => "", SETTINGS => "", SPRAY => "", STAR => "", STEAM => "", SURVIVAL => "", TERMINAL => "", TRASH => "", TREE => "", TRELLO => "", TURRET => "", UNDO => "", UNITS => "", UP => "", UPLOAD => "", UP_OPEN => "", WARNING => "⚠", WAVES => "", WRENCH => "", ZOOM => "",
-
-        ARKYCITE => "",
-        CRYOFLUID => "",
-        CYANOGEN => "",
-        GALLIUM => "",
-        HYDROGEN => "",
-        NEOPLASM => "",
-        NITROGEN => "",
-        OIL => "",
-        OZONE => "",
-        SLAG => "",
-        WATER => "",
-        BERYLLIUM => "",
-        BLAST_COMPOUND => "",
-        CARBIDE => "",
-        COAL => "",
-        COPPER => "",
-        DORMANT_CYST => "",
-        FISSILE_MATTER => "",
-        GRAPHITE => "",
-        LEAD => "",
-        METAGLASS => "",
-        OXIDE => "",
-        PHASE_FABRIC => "",
-        PLASTANIUM => "",
-        PYRATITE => "",
-        SAND => "",
-        SCRAP => "",
-        SILICON => "",
-        SPORE_POD => "",
-        SURGE_ALLOY => "",
-        THORIUM => "",
-        TITANIUM => "",
-        TUNGSTEN => "",
-        }
+        include!{concat!(env!("OUT_DIR"), "/to_mindustry_named")}
     }
 }
 
 /// get discord emojis by name
 pub mod named {
-    build! {
-        // '(.)' => ("<:([^:]+):.+)
-        // \U$3 => $2
-        SHIP_ASSEMBLER => "<:ship_assembler:1219207585379651614>", TUNGSTEN_WALL => "<:tungsten_wall:1218811730403135519>", BLAST_DOOR => "<:blast_door:1218811717031821443>", SHIP_REFABRICATOR => "<:ship_refabricator:1219207589468962816>", REINFORCED_LIQUID_CONTAINER => "<:reinforced_liquid_container:1218815886417465405>", TANK_ASSEMBLER => "<:tank_assembler:1219207591901528144>", TANK_FABRICATOR => "<:tank_fabricator:1219207594586013817>", TANK_REFABRICATOR => "<:tank_refabricator:1219207596880166942>", PRIME_REFABRICATOR => "<:prime_refabricator:1219207582468669500>", MALIGN => "<:malign:1218812205185896548>", MECH_REFABRICATOR => "<:mech_refabricator:1219207579989835832>", LUSTRE => "<:lustre:1218812203130687508>", REINFORCED_LIQUID_JUNCTION => "<:reinforced_liquid_junction:1218815889927962645>", REINFORCED_BRIDGE_CONDUIT => "<:reinforced_bridge_conduit:1218815882717958225>", TITAN => "<:titan:1218812217026154616>", REINFORCED_LIQUID_TANK => "<:reinforced_liquid_tank:1218815894281519125>", REINFORCED_SURGE_WALL_LARGE => "<:reinforced_surge_wall_large:1218811726682918952>", REINFORCED_CONDUIT => "<:reinforced_conduit:1218815884378902610>", SMITE => "<:smite:1218812212534050886>", REINFORCED_SURGE_WALL => "<:reinforced_surge_wall:1218811724543819777>", BASIC_ASSEMBLER_MODULE => "<:basic_assembler_module:1219207572662521928>", TUNGSTEN_WALL_LARGE => "<:tungsten_wall_large:1218811733125103719>", REINFORCED_PUMP => "<:reinforced_pump:1218815896206835764>", SHIELDED_WALL => "<:shielded_wall:1218811728368894012>", SHIP_FABRICATOR => "<:ship_fabricator:1219207587271016488>", BERYLLIUM_WALL_LARGE => "<:beryllium_wall_large:1218811714875687012>", CARBIDE_WALL_LARGE => "<:carbide_wall_large:1218811722350202890>", BREACH => "<:breach:1218812196742762536>", SUBLIMATE => "<:sublimate:1218812214853767300>", BERYLLIUM_WALL => "<:beryllium_wall:1218811712824938497>", MECH_FABRICATOR => "<:mech_fabricator:1219207577838161960>", REINFORCED_LIQUID_ROUTER => "<:reinforced_liquid_router:1218815892511785092>", MECH_ASSEMBLER => "<:mech_assembler:1219207575523037265>", AFFLICT => "<:afflict:1218812194419114104>", DISPERSE => "<:disperse:1218812200039485491>", SCATHE => "<:scathe:1218812210441097216>", CARBIDE_WALL => "<:carbide_wall:1218811719451938867>", CLEROI => "<:cleroi:1219090634913222766>", LOCUS => "<:locus:1219090658698985512>", OMURA => "<:omura:1219090679163256913>", RISSO => "<:risso:1219090697685172264>", MANIFOLD => "<:manifold:1219090665661665280>", COLLARIS => "<:collaris:1219090637081804990>", EMANATE => "<:emanate:1219090649404670042>", ANTHICUS => "<:anthicus:1219090621445177354>", SPIROCT => "<:spiroct:1219090703397945364>", TECTA => "<:tecta:1219090795517182062>", QUELL => "<:quell:1219090792392556694>", MACE => "<:mace:1219090662142771271>", INCITE => "<:incite:1219090654337175613>", LATUM => "<:latum:1219090790198808687>", ANTHICUS_MISSILE => "<:anthicus_missile:1219090623919820821>", OXYNOE => "<:oxynoe:1219090681805406358>", OBVIATE => "<:obviate:1219090676403142798>", ALPHA => "<:alpha:1219090619465728051>", DISRUPT_MISSILE => "<:disrupt_missile:1219090643876315157>", RENALE => "<:renale:1219090694140854393>", ASSEMBLY_DRONE => "<:assembly_drone:1219090628537745499>", VANQUISH => "<:vanquish:1219090710909947974>", AVERT => "<:avert:1219090630857330730>", PRECEPT => "<:precept:1219090684318056592>", SCATHE_MISSILE => "<:scathe_missile:1219090701338411128>", QUELL_MISSILE => "<:quell_missile:1219090689929773188>", BETA => "<:beta:1219090633101414460>", MERUI => "<:merui:1219090669163909190>", EVOKE => "<:evoke:1219090651472330864>", AEGIRES => "<:aegires:1219090617754325112>", STELL => "<:stell:1219090705650024538>", DISRUPT => "<:disrupt:1219090641716379668>", ELUDE => "<:elude:1219090646451880006>", NAVANAX => "<:navanax:1219090674243080192>", CONQUER => "<:conquer:1219090639950450728>", LARGE_PAYLOAD_MASS_DRIVER => "<:large_payload_mass_driver:1218813907292917781>", DECONSTRUCTOR => "<:deconstructor:1218813902284918834>", REINFORCED_PAYLOAD_CONVEYOR => "<:reinforced_payload_conveyor:1218813909192933456>", CONSTRUCTOR => "<:constructor:1218813900083167252>", SMALL_DECONSTRUCTOR => "<:small_deconstructor:1218813913781768253>", REINFORCED_PAYLOAD_ROUTER => "<:reinforced_payload_router:1218813911415914537>", LARGE_CONSTRUCTOR => "<:large_constructor:1218813904445116456>", DUCTBRIDGE => "<:ductbridge:1218817215856640050>", TURBINE_CONDENSER => "<:turbine_condenser:1218808871288832140>", CORE_CITADEL => "<:core_citadel:1218809185593196544>", SLAG_HEATER => "<:slag_heater:1218808275525439588>", SHOCKWAVE_TOWER => "<:shockwave_tower:1218810751603441737>", BEAM_LINK => "<:beam_link:1218808854255636560>", REINFORCED_VAULT => "<:reinforced_vault:1218809189313417336>", PHASE_SYNTHESIZER => "<:phase_synthesizer:1218808223260479508>", CLIFF_CRUSHER => "<:cliff_crusher:1218810509504151572>", HEAT_SOURCE => "<:heat_source:1218808217073614928>", ELECTRIC_HEATER => "<:electric_heater:1218808209054236712>", BEAM_TOWER => "<:beam_tower:1218808859381071924>", UNIT_CARGO_LOADER => "<:unit_cargo_loader:1218817571604791337>", SLAG_INCINERATOR => "<:slag_incinerator:1218808231187578921>", UNIT_REPAIR_TOWER => "<:unit_repair_tower:1218817574016389182>", BEAM_NODE => "<:beam_node:1218808857145380894>", HEAT_ROUTER => "<:heat_router:1218808214951432194>", REINFORCED_CONTAINER => "<:reinforced_container:1218809187291627641>", ATMOSPHERIC_CONCENTRATOR => "<:atmospheric_concentrator:1218808200715829279>", CARBIDE_CRUCIBLE => "<:carbide_crucible:1218808202632888340>", CHEMICAL_COMBUSTION_CHAMBER => "<:chemical_combustion_chamber:1218808927471407174>", BUILD_TOWER => "<:build_tower:1218810740673220771>", IMPACT_DRILL => "<:impact_drill:1218810513438543925>", PYROLYSIS_GENERATOR => "<:pyrolysis_generator:1218808869460115526>", CORE_BASTION => "<:core_bastion:1218809183223152670>", ERUPTION_DRILL => "<:eruption_drill:1218810511693709324>", LARGE_PLASMA_BORE => "<:large_plasma_bore:1218810516181614675>", PLASMA_BORE => "<:plasma_bore:1218810521889931385>", NEOPLASIA_REACTOR => "<:neoplasia_reactor:1218808867375546379>", CORE_ACROPOLIS => "<:core_acropolis:1218809181159555092>", SILICON_ARCFURNACE => "<:silicon_arcfurnace:1218808225802223616>", LARGE_SHIELD_PROJECTOR => "<:large_shield_projector:1218810742955053186>", FLUX_REACTOR => "<:flux_reactor:1218808863461998653>", REGEN_PROJECTOR => "<:regen_projector:1218810747619119114>", HEAT_REDIRECTOR => "<:heat_redirector:1218808212187385867>", ELECTROLYZER => "<:electrolyzer:1218808210878890004>", CYANOGEN_SYNTHESIZER => "<:cyanogen_synthesizer:1218808204784304128>", SURGE_CRUCIBLE => "<:surge_crucible:1218808235289481258>", OXIDATION_CHAMBER => "<:oxidation_chamber:1218808219435143258>", RADAR => "<:radar:1218810745341612033>", PHASE_HEATER => "<:phase_heater:1218808221225979954>", VENT_CONDENSER => "<:vent_condenser:1218810524741927032>", ADDITIVE_RECONSTRUCTOR => "<:additive_reconstructor:1164846854006120551>", AIR_FACTORY => "<:air_factory:1164846858871513148>", ANTUMBRA => "<:antumbra:1165060178392129698>", ARC => "<:arc:1164869705882943580>", ARKYID => "<:arkyid:1165060180455739535>", ARMORED_CONVEYOR => "<:armored_conveyor:1165056561492803644>", ARMORED_DUCT => "<:armored_duct:1165056563300544523>", ATRAX => "<:atrax:1165060183593074710>", BATTERY => "<:battery:1165057379935727756>", BATTERY_LARGE => "<:battery_large:1165057382066434149>", BLAST_DRILL => "<:blast_drill:1165059437363474504>", BLAST_MIXER => "<:blast_mixer:1164832645126041600>", BRIDGE_CONDUIT => "<:bridge_conduit:1165056979702657024>", BRIDGE_CONVEYOR => "<:bridge_conveyor:1165056566337220678>", BRYDE => "<:bryde:1165060187229519963>", CANVAS => "<:canvas:1165059258124087356>", COAL_CENTRIFUGE => "<:coal_centrifuge:1164832643246989333>", COMBUSTION_GENERATOR => "<:combustion_generator:1165057385799352321>", CONDUIT => "<:conduit:1165056982974210179>", CONTAINER => "<:container:1165057808954310667>", CONVEYOR => "<:conveyor:1165056569621369013>", COPPER_WALL => "<:copper_wall:1164868434006392842>", COPPER_WALL_LARGE => "<:copper_wall_large:1164868430726430790>", CORE_FOUNDATION => "<:core_foundation:1165057811387011203>", CORE_NUCLEUS => "<:core_nucleus:1165057814801170583>", CORE_SHARD => "<:core_shard:1165057818148225064>", CORVUS => "<:corvus:1165060189876125806>", CRAWLER => "<:crawler:1165060193940422786>", CRYOFLUID_MIXER => "<:cryofluid_mixer:1164832639807655988>", CULTIVATOR => "<:cultivator:1164832636452216922>", CYCLONE => "<:cyclone:1164869703437668392>", CYERCE => "<:cyerce:1165060197996310618>", DAGGER => "<:dagger:1165060204858183690>", DIFFERENTIAL_GENERATOR => "<:differential_generator:1165057389242896395>", DIODE => "<:diode:1165057391172272188>", DISASSEMBLER => "<:disassembler:1164832634598346813>", DISTRIBUTOR => "<:distributor:1165056571445874798>", DOOR => "<:door:1164868425294823524>", DOOR_LARGE => "<:door_large:1164868422555926538>", DUCT => "<:duct:1165056574872633354>", DUO => "<:duo:1164869699817967616>", ECLIPSE => "<:eclipse:1165060207517372456>", EXPONENTIAL_RECONSTRUCTOR => "<:exponential_reconstructor:1164846847148445716>", FLARE => "<:flare:1165060210944127067>", FORCE_PROJECTOR => "<:force_projector:1164868932440698891>", FORESHADOW => "<:foreshadow:1164869696064073760>", FORTRESS => "<:fortress:1165060214580580352>", FUSE => "<:fuse:1164869692591198208>", GAMMA => "<:gamma:1165060216719683664>", GRAPHITE_PRESS => "<:graphite_press:1164832630643105853>", GROUND_FACTORY => "<:ground_factory:1164846860800892938>", HAIL => "<:hail:1164869685133717564>", HORIZON => "<:horizon:1165060220070932551>", HYPER_PROCESSOR => "<:hyper_processor:1165059260837806110>", ILLUMINATOR => "<:illuminator:1165057394418655311>", IMPACT_REACTOR => "<:impact_reactor:1165057397711179846>", IMPULSE_PUMP => "<:impulse_pump:1165056986040250448>", INCINERATOR => "<:incinerator:1164832628642431037>", INTERPLANETARY_ACCELERATOR => "<:interplanetary_accelerator:1165059547526860950>", INVERTED_SORTER => "<:inverted_sorter:1165056577020121190>", ITEM_SOURCE => "<:item_source:1165056586012700793>", ITEM_VOID => "<:item_void:1165056589275865168>", JUNCTION => "<:junction:1165056592169926677>", KILN => "<:kiln:1164832625547018251>", LANCER => "<:lancer:1164869681472094219>", LARGE_LOGIC_DISPLAY => "<:large_logic_display:1165059264230981702>", LASER_DRILL => "<:laser_drill:1165059440077189140>", LAUNCH_PAD => "<:launch_pad:1165059549477220382>", LIQUID_CONTAINER => "<:liquid_container:1165056989135655034>", LIQUID_JUNCTION => "<:liquid_junction:1165056991853559868>", LIQUID_ROUTER => "<:liquid_router:1165056995783614574>", LIQUID_SOURCE => "<:liquid_source:1165056998862237857>", LIQUID_TANK => "<:liquid_tank:1165057003027181649>", LIQUID_VOID => "<:liquid_void:1165057004889444402>", LOGIC_DISPLAY => "<:logic_display:1165059267267674224>", LOGIC_PROCESSOR => "<:logic_processor:1165059269356433459>", MASS_DRIVER => "<:mass_driver:1165056595466649620>", MECHANICAL_DRILL => "<:mechanical_drill:1165059443264864307>", MECHANICAL_PUMP => "<:mechanical_pump:1165057009620635749>", MEGA => "<:mega:1165060222956621847>", MELTDOWN => "<:meltdown:1164869678598979655>", MELTER => "<:melter:1164832622455824395>", MEMORY_BANK => "<:memory_bank:1165059272426668102>", MEMORY_CELL => "<:memory_cell:1165059275572387921>", MENDER => "<:mender:1164868927264915466>", MEND_PROJECTOR => "<:mend_projector:1164868930616180746>", MESSAGE => "<:message:1165059277409484820>", MICRO_PROCESSOR => "<:micro_processor:1165059281087889479>", MINKE => "<:minke:1165060225489981440>", MONO => "<:mono:1165060228618928178>", MULTIPLICATIVE_RECONSTRUCTOR => "<:multiplicative_reconstructor:1164846850013134920>", MULTI_PRESS => "<:multi_press:1164832620522242068>", NAVAL_FACTORY => "<:naval_factory:1164846856094875738>", NOVA => "<:nova:1165060232070828062>", OCT => "<:oct:1165060234310598788>", OIL_EXTRACTOR => "<:oil_extractor:1165059446301536317>", OVERDRIVE_DOME => "<:overdrive_dome:1164868924186316940>", OVERDRIVE_PROJECTOR => "<:overdrive_projector:1164868922135289996>", OVERFLOW_GATE => "<:overflow_gate:1165056597467332678>", PARALLAX => "<:parallax:1164869674568261683>", PAYLOAD_CONVEYOR => "<:payload_conveyor:1165055040411668500>", PAYLOAD_LOADER => "<:payload_loader:1165055042408165376>", PAYLOAD_MASS_DRIVER => "<:payload_mass_driver:1165055046216585226>", PAYLOAD_ROUTER => "<:payload_router:1165055049630748672>", PAYLOAD_SOURCE => "<:payload_source:1165055051648209008>", PAYLOAD_UNLOADER => "<:payload_unloader:1165055055473410048>", PAYLOAD_VOID => "<:payload_void:1165055058988240906>", PHASE_CONDUIT => "<:phase_conduit:1165057015228407899>", PHASE_CONVEYOR => "<:phase_conveyor:1165056600520802305>", PHASE_WALL => "<:phase_wall:1164868417803796490>", PHASE_WALL_LARGE => "<:phase_wall_large:1164868414100213760>", PHASE_WEAVER => "<:phase_weaver:1164832617389113374>", PLASTANIUM_COMPRESSOR => "<:plastanium_compressor:1164832614096576555>", PLASTANIUM_CONVEYOR => "<:plastanium_conveyor:1165056604174045277>", PLASTANIUM_WALL => "<:plastanium_wall:1164868410379874404>", PLASTANIUM_WALL_LARGE => "<:plastanium_wall_large:1164868405661278229>", PLATED_CONDUIT => "<:plated_conduit:1165057017388482660>", PNEUMATIC_DRILL => "<:pneumatic_drill:1165059448058953728>", POLY => "<:poly:1165060238341316720>", POWER_NODE => "<:power_node:1165057399678308383>", POWER_NODE_LARGE => "<:power_node_large:1165057403176358018>", PULSAR => "<:pulsar:1165060241394765834>", PULSE_CONDUIT => "<:pulse_conduit:1165057021205303336>", PULVERIZER => "<:pulverizer:1164832611500310548>", PYRATITE_MIXER => "<:pyratite_mixer:1164832608002256906>", QUAD => "<:quad:1165060243500322967>", QUASAR => "<:quasar:1165060246646046740>", REIGN => "<:reign:1165060249892433940>", RETUSA => "<:retusa:1165060254183206942>", RIPPLE => "<:ripple:1164869672458530816>", ROTARY_PUMP => "<:rotary_pump:1165057025089228891>", ROUTER => "<:router:1165056609395949638>", RTG_GENERATOR => "<:rtg_generator:1165057406506651708>", SALVO => "<:salvo:1164869669224722432>", SCATTER => "<:scatter:1164869667295346732>", SCEPTER => "<:scepter:1165060256276164668>", SCORCH => "<:scorch:1164869663663071282>", SCRAP_WALL => "<:scrap_wall:1164868403593482281>", SCRAP_WALL_GIGANTIC => "<:scrap_wall_gigantic:1164868400410005545>", SCRAP_WALL_HUGE => "<:scrap_wall_huge:1164868397377527849>", SCRAP_WALL_LARGE => "<:scrap_wall_large:1164868391950106704>", SEGMENT => "<:segment:1164869661591089163>", SEI => "<:sei:1165060259719680160>", SEPARATOR => "<:separator:1164832606160961606>", SHIELD_PROJECTOR => "<:shield_projector:1164868919903928330>", SILICON_CRUCIBLE => "<:silicon_crucible:1164832602696462346>", SILICON_SMELTER => "<:silicon_smelter:1164832599328444447>", SOLAR_PANEL => "<:solar_panel:1165057408616366101>", SOLAR_PANEL_LARGE => "<:solar_panel_large:1165057412126998649>", SORTER => "<:sorter:1165056611480502322>", SPECTRE => "<:spectre:1164869658365673512>", SPORE_PRESS => "<:spore_press:1164832597411647508>", STEAM_GENERATOR => "<:steam_generator:1165057415658614795>", SURGE_CONVEYOR => "<:surge_conveyor:1165056614835945542>", SURGE_SMELTER => "<:surge_smelter:1164832648426950706>", SURGE_TOWER => "<:surge_tower:1165057419894853725>", SURGE_WALL => "<:surge_wall:1164868390024921148>", SURGE_WALL_LARGE => "<:surge_wall_large:1164868386929512509>", SWARMER => "<:swarmer:1164869653357670480>", SWITCH => "<:switch:1165059283331862620>", TETRATIVE_RECONSTRUCTOR => "<:tetrative_reconstructor:1164846844053028945>", THERMAL_GENERATOR => "<:thermal_generator:1165057421899726968>", THORIUM_REACTOR => "<:thorium_reactor:1165057424915431474>", THORIUM_WALL => "<:thorium_wall:1164868384018665552>", THORIUM_WALL_LARGE => "<:thorium_wall_large:1164868375353249793>", THRUSTER => "<:thruster:1164868368235507754>", TITANIUM_CONVEYOR => "<:titanium_conveyor:1165056617809715210>", TITANIUM_WALL => "<:titanium_wall:1164868373335773184>", TITANIUM_WALL_LARGE => "<:titanium_wall_large:1164868370177466388>", TOXOPID => "<:toxopid:1165060263368736920>", TSUNAMI => "<:tsunami:1164869649125605396>", UNDERFLOW_GATE => "<:underflow_gate:1165056619873320981>", UNLOADER => "<:unloader:1165057822791307344>", VAULT => "<:vault:1165057825110761583>", VELA => "<:vela:1165060264958382081>", WATER_EXTRACTOR => "<:water_extractor:1165059449917018143>", WAVE => "<:wave:1164869646873280562>", WORLD_CELL => "<:world_cell:1165059286414659657>", WORLD_MESSAGE => "<:world_message:1165059289648480297>", WORLD_PROCESSOR => "<:world_processor:1165059291473006612>", ZENITH => "<:zenith:1165060268607418440>", ADD => "<:add:1182128870678335538>", ADMIN => "<:admin:1182128872435749005>", ANDROID => "<:android:1182128875950592150>", ATTACK => "<:attack:1182128880434298900>", BOOK => "<:book:1182128890496438372>", BOOK_OPEN => "<:book_open:1182128882829242389>", BOX => "<:box:1182128897064718386>", CANCEL => "<:cancel:1182128899166064720>", CHART_BAR => "<:chart_bar:1182121860008259594>", CHAT => "<:chat:1182128903528124636>", COMMAND_ATTACK => "<:command_attack:1182128907856662528>", COMMAND_RALLY => "<:command_rally:1182128911082082434>", COPY => "<:copy:1182132924158574592>", CRAFTING => "<:crafting:1182128916631146566>", DEFENSE => "<:defense:1182132929615380510>", DIAGONAL => "<:diagonal:1182128919843975290>", DISCORD => "<:discord:1182124785371729990>", DISTRIBUTION => "<:distribution:1182128923023261716>", DOWNLOAD => "<:download:1182132934996656189>", DOWN_OPEN => "<:down_open:1182128928031244488>", EDIT => "<:edit:1182128933618061352>", EDITOR => "<:editor:1182132940302454784>", EFFECT => "<:effect:1182128939150360576>", ERASER => "<:eraser:1182128944628113418>", EXIT => "<:exit:1182128949497712811>", EXPORT => "<:export:1182128954132402257>", EYE => "<:eye:1182132944614195332>", EYE_OFF => "<:eye_off:1182132947478917150>", FILE => "<:file:1182132954382737468>", FILE_IMAGE => "<:file_image:1182121569410097252>", FILE_TEXT => "<:file_text:1182132951748722790>", FILL => "<:fill:1182128958809055372>", FILTER => "<:filter:1182128963062091796>", FILTERS => "<:filters:1182128967600312381>", FLIP_X => "<:flip_x:1182128969743609966>", FLIP_Y => "<:flip_y:1182128973673672805>", FOLDER => "<:folder:1182128977893142600>", GITHUB => "<:github:1182128985820381204>", GITHUB_SQUARE => "<:github_square:1182121451655004221>", GOOGLE_PLAY => "<:google_play:1182128988064329768>", GRID => "<:grid:1182128995509219399>", HAMMER => "<:hammer:1182128999351201932>", HOME => "<:home:1182120453108670574>", HOST => "<:host:1182129003256107139>", DOWN => "<:down:1182120158072938577>", IMAGE => "<:image:1182120708227223634>", INFO => "<:info:1182132960934252564>", INFO_CIRCLE => "<:info_circle:1182129007496548442>", ITCHIO => "<:itchio:1182129011950878770>", LAYERS => "<:layers:1182129017185378326>", LEFT => "<:left:1182119706392535131>", LEFT_OPEN => "<:left_open:1182129022906413188>", LINE => "<:line:1182129027180404758>", LINK => "<:link:1182129032196784199>", LIQUID => "<:liquid:1182129034650451969>", LIST => "<:list:1182123020240830534>", LOCK => "<:lock:1182132966705598484>", LOCK_OPEN => "<:lock_open:1182132973299048518>", LOGIC => "<:logic:1182129040212119592>", MAP => "<:map:1182129048135155773>", MOVE => "<:move:1182129052744687656>", NONE => "<:none:1182129058105012325>", OK => "<:ok:1182120559916625971>", PASTE => "<:paste:1182129062504841236>", PAUSE => "<:pause:1182129067697373298>", PENCIL => "<:pencil:1182129072445337692>", PICK => "<:pick:1182132978151866409>", PLANE => "<:plane:1182129077495287818>", PLANET => "<:planet:1182132980899139684>", PLAY => "<:play:1182129079869251614>", PLAYERS => "<:players:1182129203420864557>", POWER => "<:power:1182132985559003136>", PRODUCTION => "<:production:1182132992911613963>", PVP => "<:pvp:1182132995130400789>", REDDIT => "<:reddit:1182133001044361307>", REDO => "<:redo:1182133008384413736>", REFRESH => "<:refresh:1182133010586423387>", RESIZE => "<:resize:1182120953245868152>", RIGHT => "<:right:1182119750155915264>", RIGHT_OPEN => "<:right_open:1182133015036575745>", ROTATE => "<:rotate:1182133018400399521>", SAVE => "<:save:1182133023068655737>", SETTINGS => "<:settings:1182133030073151508>", SPRAY => "<:spray:1182133032493252689>", STAR => "<:star:1182120776070070382>", STEAM => "<:steam:1182133038054912020>", SURVIVAL => "<:survival:1182133046233809016>", TERMINAL => "<:terminal:1182133050587484231>", TRASH => "<:trash:1182133055008284814>", TREE => "<:tree:1182133057138987148>", TRELLO => "<:trello:1182133061236834375>", TURRET => "<:turret:1182133068123873320>", UNDO => "<:undo:1182133073454825512>", UNITS => "<:units:1182133078022422579>", UP => "<:up:1182120109221875802>", UPLOAD => "<:upload:1182133085148561498>", UP_OPEN => "<:up_open:1182133079997960282>", WARNING => "<:warning:1182119952048726066>", WAVES => "<:waves:1182133091570040873>", WRENCH => "<:wrench:1174277587493715979>", ZOOM => "<:zoom:1182133094090809406>",
-
-        ARKYCITE => "<:arkycite:1144220710106038383>",
-        CRYOFLUID => "<:cryofluid:1144220686018154599>",
-        CYANOGEN => "<:cyanogen:1144220681945489408>",
-        GALLIUM => "<:gallium:1144220668238516264>",
-        HYDROGEN => "<:hydrogen:1144220658746798090>",
-        NEOPLASM => "<:neoplasm:1144220645794791505>",
-        NITROGEN => "<:nitrogen:1144220641160077363>",
-        OIL => "<:oil:1144220637448118353>",
-        OZONE => "<:ozone:1144220628627497091>",
-        SLAG => "<:slag:1144220603671396352>",
-        WATER => "<:water:1144220582204944434>",
-        BERYLLIUM => "<:beryllium:1144220705739788288>",
-        BLAST_COMPOUD => "<:blastcompound:1144220701671305319>",
-        CARBIDE => "<:carbide:1144220696927555584>",
-        COAL => "<:coal:1144220692729036800>",
-        COPPER => "<:copper:1144220690216648704>",
-        DORMANT_CYST => "<:dormantcyst:1144220677994446928>",
-        FISSILE_MATTER => "<:fissilematter:1144220673670131742>",
-        GRAPHITE => "<:graphite:1144220661137551400>",
-        LEAD => "<:lead:1144220654686699570>",
-        METAGLASS => "<:metaglass:1144220649901019206>",
-        OXIDE => "<:oxide:1144220632746295316>",
-        PHASE_FABRIC => "<:phasefabric:1144220626224156794>",
-        PLASTANIUM => "<:plastanium:1144220622403153971>",
-        PYRATITE => "<:pyratite:1144220617319657572>",
-        SAND => "<:sand:1144220613880315934>",
-        SCRAP => "<:scrap:1144220611531505704>",
-        SILICON => "<:silicon:1144220607710502922>",
-        SPORE_POD => "<:sporepod:1144220601205149777>",
-        SURGE_ALLOY => "<:surgealloy:1144220597484789822>",
-        THORIUM => "<:thorium:1144220593068191784>",
-        TITANIUM => "<:titanium:1144220588978749551>",
-        TUNGSTEN => "<:tungsten:1144220586382458970>",
-
-    }
+    include!{concat!(env!("OUT_DIR"), "/to_discord_named")}
 }
 
 /// map mindustry emojis
 pub mod mindustry {
+    use super::named;
     /// mindustry liquid, i.e gallium, water, oil
     pub use mindus::fluid::Type as Fluid;
     /// mindustry item, i.e copper, lead, silicon, phase fabric
     pub use mindus::item::Type as Item;
-
-    /// to discord emojis
-    pub static TO_DISCORD: phf::Map<char, &str> = phf::phf_map! {
-        '' => "<:ship_assembler:1219207585379651614>",
-        '' => "<:tungsten_wall:1218811730403135519>",
-        '' => "<:blast_door:1218811717031821443>",
-        '' => "<:ship_refabricator:1219207589468962816>",
-        '' => "<:reinforced_liquid_container:1218815886417465405>",
-        '' => "<:tank_assembler:1219207591901528144>",
-        '' => "<:tank_fabricator:1219207594586013817>",
-        '' => "<:tank_refabricator:1219207596880166942>",
-        '' => "<:prime_refabricator:1219207582468669500>",
-        '' => "<:malign:1218812205185896548>",
-        '' => "<:mech_refabricator:1219207579989835832>",
-        '' => "<:lustre:1218812203130687508>",
-        '' => "<:reinforced_liquid_junction:1218815889927962645>",
-        '' => "<:reinforced_bridge_conduit:1218815882717958225>",
-        '' => "<:titan:1218812217026154616>",
-        '' => "<:reinforced_liquid_tank:1218815894281519125>",
-        '' => "<:reinforced_surge_wall_large:1218811726682918952>",
-        '' => "<:reinforced_conduit:1218815884378902610>",
-        '' => "<:smite:1218812212534050886>",
-        '' => "<:reinforced_surge_wall:1218811724543819777>",
-        '' => "<:basic_assembler_module:1219207572662521928>",
-        '' => "<:tungsten_wall_large:1218811733125103719>",
-        '' => "<:reinforced_pump:1218815896206835764>",
-        '' => "<:shielded_wall:1218811728368894012>",
-        '' => "<:ship_fabricator:1219207587271016488>",
-        '' => "<:beryllium_wall_large:1218811714875687012>",
-        '' => "<:carbide_wall_large:1218811722350202890>",
-        '' => "<:breach:1218812196742762536>",
-        '' => "<:sublimate:1218812214853767300>",
-        '' => "<:beryllium_wall:1218811712824938497>",
-        '' => "<:mech_fabricator:1219207577838161960>",
-        '' => "<:reinforced_liquid_router:1218815892511785092>",
-        '' => "<:mech_assembler:1219207575523037265>",
-        '' => "<:afflict:1218812194419114104>",
-        '' => "<:disperse:1218812200039485491>",
-        '' => "<:scathe:1218812210441097216>",
-        '' => "<:carbide_wall:1218811719451938867>",
-        '' => "<:cleroi:1219090634913222766>",
-        '' => "<:locus:1219090658698985512>",
-        '' => "<:omura:1219090679163256913>",
-        '' => "<:risso:1219090697685172264>",
-        '' => "<:manifold:1219090665661665280>",
-        '' => "<:collaris:1219090637081804990>",
-        '' => "<:emanate:1219090649404670042>",
-        '' => "<:anthicus:1219090621445177354>",
-        '' => "<:spiroct:1219090703397945364>",
-        '' => "<:tecta:1219090795517182062>",
-        '' => "<:quell:1219090792392556694>",
-        '' => "<:mace:1219090662142771271>",
-        '' => "<:incite:1219090654337175613>",
-        '' => "<:latum:1219090790198808687>",
-        '' => "<:anthicus_missile:1219090623919820821>",
-        '' => "<:oxynoe:1219090681805406358>",
-        '' => "<:obviate:1219090676403142798>",
-        '' => "<:alpha:1219090619465728051>",
-        '' => "<:disrupt_missile:1219090643876315157>",
-        '' => "<:renale:1219090694140854393>",
-        '' => "<:assembly_drone:1219090628537745499>",
-        '' => "<:vanquish:1219090710909947974>",
-        '' => "<:avert:1219090630857330730>",
-        '' => "<:precept:1219090684318056592>",
-        '' => "<:scathe_missile:1219090701338411128>",
-        '' => "<:quell_missile:1219090689929773188>",
-        '' => "<:beta:1219090633101414460>",
-        '' => "<:merui:1219090669163909190>",
-        '' => "<:evoke:1219090651472330864>",
-        '' => "<:aegires:1219090617754325112>",
-        '' => "<:stell:1219090705650024538>",
-        '' => "<:disrupt:1219090641716379668>",
-        '' => "<:elude:1219090646451880006>",
-        '' => "<:navanax:1219090674243080192>",
-        '' => "<:conquer:1219090639950450728>",
-        '' => "<:large_payload_mass_driver:1218813907292917781>",
-        '' => "<:deconstructor:1218813902284918834>",
-        '' => "<:reinforced_payload_conveyor:1218813909192933456>",
-        '' => "<:constructor:1218813900083167252>",
-        '' => "<:small_deconstructor:1218813913781768253>",
-        '' => "<:reinforced_payload_router:1218813911415914537>",
-        '' => "<:large_constructor:1218813904445116456>",
-        '' => "<:ductbridge:1218817215856640050>",
-        '' => "<:turbine_condenser:1218808871288832140>",
-        '' => "<:core_citadel:1218809185593196544>",
-        '' => "<:slag_heater:1218808275525439588>",
-        '' => "<:shockwave_tower:1218810751603441737>",
-        '' => "<:beam_link:1218808854255636560>",
-        '' => "<:reinforced_vault:1218809189313417336>",
-        '' => "<:phase_synthesizer:1218808223260479508>",
-        '' => "<:cliff_crusher:1218810509504151572>",
-        '' => "<:heat_source:1218808217073614928>",
-        '' => "<:electric_heater:1218808209054236712>",
-        '' => "<:beam_tower:1218808859381071924>",
-        '' => "<:unit_cargo_loader:1218817571604791337>",
-        '' => "<:slag_incinerator:1218808231187578921>",
-        '' => "<:unit_repair_tower:1218817574016389182>",
-        '' => "<:beam_node:1218808857145380894>",
-        '' => "<:heat_router:1218808214951432194>",
-        '' => "<:reinforced_container:1218809187291627641>",
-        '' => "<:atmospheric_concentrator:1218808200715829279>",
-        '' => "<:carbide_crucible:1218808202632888340>",
-        '' => "<:chemical_combustion_chamber:1218808927471407174>",
-        '' => "<:build_tower:1218810740673220771>",
-        '' => "<:impact_drill:1218810513438543925>",
-        '' => "<:pyrolysis_generator:1218808869460115526>",
-        '' => "<:core_bastion:1218809183223152670>",
-        '' => "<:eruption_drill:1218810511693709324>",
-        '' => "<:large_plasma_bore:1218810516181614675>",
-        '' => "<:plasma_bore:1218810521889931385>",
-        '' => "<:neoplasia_reactor:1218808867375546379>",
-        '' => "<:core_acropolis:1218809181159555092>",
-        '' => "<:silicon_arcfurnace:1218808225802223616>",
-        '' => "<:large_shield_projector:1218810742955053186>",
-        '' => "<:flux_reactor:1218808863461998653>",
-        '' => "<:regen_projector:1218810747619119114>",
-        '' => "<:heat_redirector:1218808212187385867>",
-        '' => "<:electrolyzer:1218808210878890004>",
-        '' => "<:cyanogen_synthesizer:1218808204784304128>",
-        '' => "<:surge_crucible:1218808235289481258>",
-        '' => "<:oxidation_chamber:1218808219435143258>",
-        '' => "<:radar:1218810745341612033>",
-        '' => "<:phase_heater:1218808221225979954>",
-        '' => "<:vent_condenser:1218810524741927032>",
-        '' => "<:additive_reconstructor:1164846854006120551>",
-        '' => "<:air_factory:1164846858871513148>",
-        '' => "<:antumbra:1165060178392129698>",
-        '' => "<:arc:1164869705882943580>",
-        '' => "<:arkyid:1165060180455739535>",
-        '' => "<:armored_conveyor:1165056561492803644>",
-        '' => "<:armored_duct:1165056563300544523>",
-        '' => "<:atrax:1165060183593074710>",
-        '' => "<:battery:1165057379935727756>",
-        '' => "<:battery_large:1165057382066434149>",
-        '' => "<:blast_drill:1165059437363474504>",
-        '' => "<:blast_mixer:1164832645126041600>",
-        '' => "<:bridge_conduit:1165056979702657024>",
-        '' => "<:bridge_conveyor:1165056566337220678>",
-        '' => "<:bryde:1165060187229519963>",
-        '' => "<:canvas:1165059258124087356>",
-        '' => "<:coal_centrifuge:1164832643246989333>",
-        '' => "<:combustion_generator:1165057385799352321>",
-        '' => "<:conduit:1165056982974210179>",
-        '' => "<:container:1165057808954310667>",
-        '' => "<:conveyor:1165056569621369013>",
-        '' => "<:copper_wall:1164868434006392842>",
-        '' => "<:copper_wall_large:1164868430726430790>",
-        '' => "<:core_foundation:1165057811387011203>",
-        '' => "<:core_nucleus:1165057814801170583>",
-        '' => "<:core_shard:1165057818148225064>",
-        '' => "<:corvus:1165060189876125806>",
-        '' => "<:crawler:1165060193940422786>",
-        '' => "<:cryofluid_mixer:1164832639807655988>",
-        '' => "<:cultivator:1164832636452216922>",
-        '' => "<:cyclone:1164869703437668392>",
-        '' => "<:cyerce:1165060197996310618>",
-        '' => "<:dagger:1165060204858183690>",
-        '' => "<:differential_generator:1165057389242896395>",
-        '' => "<:diode:1165057391172272188>",
-        '' => "<:disassembler:1164832634598346813>",
-        '' => "<:distributor:1165056571445874798>",
-        '' => "<:door:1164868425294823524>",
-        '' => "<:door_large:1164868422555926538>",
-        '' => "<:duct:1165056574872633354>",
-        '' => "<:duo:1164869699817967616>",
-        '' => "<:eclipse:1165060207517372456>",
-        '' => "<:exponential_reconstructor:1164846847148445716>",
-        '' => "<:flare:1165060210944127067>",
-        '' => "<:force_projector:1164868932440698891>",
-        '' => "<:foreshadow:1164869696064073760>",
-        '' => "<:fortress:1165060214580580352>",
-        '' => "<:fuse:1164869692591198208>",
-        '' => "<:gamma:1165060216719683664>",
-        '' => "<:graphite_press:1164832630643105853>",
-        '' => "<:ground_factory:1164846860800892938>",
-        '' => "<:hail:1164869685133717564>",
-        '' => "<:horizon:1165060220070932551>",
-        '' => "<:hyper_processor:1165059260837806110>",
-        '' => "<:illuminator:1165057394418655311>",
-        '' => "<:impact_reactor:1165057397711179846>",
-        '' => "<:impulse_pump:1165056986040250448>",
-        '' => "<:incinerator:1164832628642431037>",
-        '' => "<:interplanetary_accelerator:1165059547526860950>",
-        '' => "<:inverted_sorter:1165056577020121190>",
-        '' => "<:item_source:1165056586012700793>",
-        '' => "<:item_void:1165056589275865168>",
-        '' => "<:junction:1165056592169926677>",
-        '' => "<:kiln:1164832625547018251>",
-        '' => "<:lancer:1164869681472094219>",
-        '' => "<:large_logic_display:1165059264230981702>",
-        '' => "<:laser_drill:1165059440077189140>",
-        '' => "<:launch_pad:1165059549477220382>",
-        '' => "<:liquid_container:1165056989135655034>",
-        '' => "<:liquid_junction:1165056991853559868>",
-        '' => "<:liquid_router:1165056995783614574>",
-        '' => "<:liquid_source:1165056998862237857>",
-        '' => "<:liquid_tank:1165057003027181649>",
-        '' => "<:liquid_void:1165057004889444402>",
-        '' => "<:logic_display:1165059267267674224>",
-        '' => "<:logic_processor:1165059269356433459>",
-        '' => "<:mass_driver:1165056595466649620>",
-        '' => "<:mechanical_drill:1165059443264864307>",
-        '' => "<:mechanical_pump:1165057009620635749>",
-        '' => "<:mega:1165060222956621847>",
-        '' => "<:meltdown:1164869678598979655>",
-        '' => "<:melter:1164832622455824395>",
-        '' => "<:memory_bank:1165059272426668102>",
-        '' => "<:memory_cell:1165059275572387921>",
-        '' => "<:mender:1164868927264915466>",
-        '' => "<:mend_projector:1164868930616180746>",
-        '' => "<:message:1165059277409484820>",
-        '' => "<:micro_processor:1165059281087889479>",
-        '' => "<:minke:1165060225489981440>",
-        '' => "<:mono:1165060228618928178>",
-        '' => "<:multiplicative_reconstructor:1164846850013134920>",
-        '' => "<:multi_press:1164832620522242068>",
-        '' => "<:naval_factory:1164846856094875738>",
-        '' => "<:nova:1165060232070828062>",
-        '' => "<:oct:1165060234310598788>",
-        '' => "<:oil_extractor:1165059446301536317>",
-        '' => "<:overdrive_dome:1164868924186316940>",
-        '' => "<:overdrive_projector:1164868922135289996>",
-        '' => "<:overflow_gate:1165056597467332678>",
-        '' => "<:parallax:1164869674568261683>",
-        '' => "<:payload_conveyor:1165055040411668500>",
-        '' => "<:payload_loader:1165055042408165376>",
-        '' => "<:payload_mass_driver:1165055046216585226>",
-        '' => "<:payload_router:1165055049630748672>",
-        '' => "<:payload_source:1165055051648209008>",
-        '' => "<:payload_unloader:1165055055473410048>",
-        '' => "<:payload_void:1165055058988240906>",
-        '' => "<:phase_conduit:1165057015228407899>",
-        '' => "<:phase_conveyor:1165056600520802305>",
-        '' => "<:phase_wall:1164868417803796490>",
-        '' => "<:phase_wall_large:1164868414100213760>",
-        '' => "<:phase_weaver:1164832617389113374>",
-        '' => "<:plastanium_compressor:1164832614096576555>",
-        '' => "<:plastanium_conveyor:1165056604174045277>",
-        '' => "<:plastanium_wall:1164868410379874404>",
-        '' => "<:plastanium_wall_large:1164868405661278229>",
-        '' => "<:plated_conduit:1165057017388482660>",
-        '' => "<:pneumatic_drill:1165059448058953728>",
-        '' => "<:poly:1165060238341316720>",
-        '' => "<:power_node:1165057399678308383>",
-        '' => "<:power_node_large:1165057403176358018>",
-        '' => "<:pulsar:1165060241394765834>",
-        '' => "<:pulse_conduit:1165057021205303336>",
-        '' => "<:pulverizer:1164832611500310548>",
-        '' => "<:pyratite_mixer:1164832608002256906>",
-        '' => "<:quad:1165060243500322967>",
-        '' => "<:quasar:1165060246646046740>",
-        '' => "<:reign:1165060249892433940>",
-        '' => "<:retusa:1165060254183206942>",
-        '' => "<:ripple:1164869672458530816>",
-        '' => "<:rotary_pump:1165057025089228891>",
-        '' => "<:router:1165056609395949638>",
-        '' => "<:rtg_generator:1165057406506651708>",
-        '' => "<:salvo:1164869669224722432>",
-        '' => "<:scatter:1164869667295346732>",
-        '' => "<:scepter:1165060256276164668>",
-        '' => "<:scorch:1164869663663071282>",
-        '' => "<:scrap_wall:1164868403593482281>",
-        '' => "<:scrap_wall_gigantic:1164868400410005545>",
-        '' => "<:scrap_wall_huge:1164868397377527849>",
-        '' => "<:scrap_wall_large:1164868391950106704>",
-        '' => "<:segment:1164869661591089163>",
-        '' => "<:sei:1165060259719680160>",
-        '' => "<:separator:1164832606160961606>",
-        '' => "<:shield_projector:1164868919903928330>",
-        '' => "<:silicon_crucible:1164832602696462346>",
-        '' => "<:silicon_smelter:1164832599328444447>",
-        '' => "<:solar_panel:1165057408616366101>",
-        '' => "<:solar_panel_large:1165057412126998649>",
-        '' => "<:sorter:1165056611480502322>",
-        '' => "<:spectre:1164869658365673512>",
-        '' => "<:spore_press:1164832597411647508>",
-        '' => "<:steam_generator:1165057415658614795>",
-        '' => "<:surge_conveyor:1165056614835945542>",
-        '' => "<:surge_smelter:1164832648426950706>",
-        '' => "<:surge_tower:1165057419894853725>",
-        '' => "<:surge_wall:1164868390024921148>",
-        '' => "<:surge_wall_large:1164868386929512509>",
-        '' => "<:swarmer:1164869653357670480>",
-        '' => "<:switch:1165059283331862620>",
-        '' => "<:tetrative_reconstructor:1164846844053028945>",
-        '' => "<:thermal_generator:1165057421899726968>",
-        '' => "<:thorium_reactor:1165057424915431474>",
-        '' => "<:thorium_wall:1164868384018665552>",
-        '' => "<:thorium_wall_large:1164868375353249793>",
-        '' => "<:thruster:1164868368235507754>",
-        '' => "<:titanium_conveyor:1165056617809715210>",
-        '' => "<:titanium_wall:1164868373335773184>",
-        '' => "<:titanium_wall_large:1164868370177466388>",
-        '' => "<:toxopid:1165060263368736920>",
-        '' => "<:tsunami:1164869649125605396>",
-        '' => "<:underflow_gate:1165056619873320981>",
-        '' => "<:unloader:1165057822791307344>",
-        '' => "<:vault:1165057825110761583>",
-        '' => "<:vela:1165060264958382081>",
-        '' => "<:water_extractor:1165059449917018143>",
-        '' => "<:wave:1164869646873280562>",
-        '' => "<:world_cell:1165059286414659657>",
-        '' => "<:world_message:1165059289648480297>",
-        '' => "<:world_processor:1165059291473006612>",
-        '' => "<:zenith:1165060268607418440>",
-
-        // icon section
-        '' => "<:add:1182128870678335538>",
-        '' => "<:admin:1182128872435749005>",
-        '' => "<:android:1182128875950592150>",
-        '' => "<:attack:1182128880434298900>",
-        '' => "<:book:1182128890496438372>",
-        '' => "<:book_open:1182128882829242389>",
-        '' => "<:box:1182128897064718386>",
-        '' => "<:cancel:1182128899166064720>",
-        '' => "<:chart_bar:1182121860008259594>",
-        '' => "<:chat:1182128903528124636>",
-        '' => "<:command_attack:1182128907856662528>",
-        '' => "<:command_rally:1182128911082082434>",
-        '' => "<:copy:1182132924158574592>",
-        '' => "<:crafting:1182128916631146566>",
-        '' => "<:defense:1182132929615380510>",
-        '' => "<:diagonal:1182128919843975290>",
-        '' => "<:discord:1182124785371729990>",
-        '' => "<:distribution:1182128923023261716>",
-        '' => "<:download:1182132934996656189>",
-        '' => "<:down_open:1182128928031244488>",
-        '' => "<:edit:1182128933618061352>",
-        '' => "<:editor:1182132940302454784>",
-        '' => "<:editor:1182132940302454784>",
-        '' => "<:effect:1182128939150360576>",
-        '' => "<:eraser:1182128944628113418>",
-        '' => "<:exit:1182128949497712811>",
-        '' => "<:export:1182128954132402257>",
-        '' => "<:eye:1182132944614195332>",
-        '' => "<:eye_off:1182132947478917150>",
-        '' => "<:file:1182132954382737468>",
-        '' => "<:file_image:1182121569410097252>",
-        '' => "<:file_text:1182132951748722790>",
-        '' => "<:file_text:1182132951748722790>",
-        '' => "<:fill:1182128958809055372>",
-        '' => "<:filter:1182128963062091796>",
-        '' => "<:filters:1182128967600312381>",
-        '' => "<:flip_x:1182128969743609966>",
-        '' => "<:flip_y:1182128973673672805>",
-        '' => "<:folder:1182128977893142600>",
-        '' => "<:github:1182128985820381204>",
-        '' => "<:github_square:1182121451655004221>",
-        '' => "<:google_play:1182128988064329768>",
-        '' => "<:grid:1182128995509219399>",
-        '' => "<:hammer:1182128999351201932>",
-        '' => "<:home:1182120453108670574>",
-        '' => "<:host:1182129003256107139>",
-        '' => "<:down:1182120158072938577>",
-        '' => "<:image:1182120708227223634>",
-        '' => "<:info:1182132960934252564>",
-        '' => "<:info_circle:1182129007496548442>",
-        '' => "<:itchio:1182129011950878770>",
-        '' => "<:layers:1182129017185378326>",
-        '' => "<:left:1182119706392535131>",
-        '' => "<:left_open:1182129022906413188>",
-        '' => "<:line:1182129027180404758>",
-        '' => "<:link:1182129032196784199>",
-        '' => "<:liquid:1182129034650451969>",
-        '' => "<:list:1182123020240830534>",
-        '' => "<:lock:1182132966705598484>",
-        '' => "<:lock_open:1182132973299048518>",
-        '' => "<:logic:1182129040212119592>",
-        '' => "<:map:1182129048135155773>",
-        '' => "<:move:1182129052744687656>",
-        '' => "<:none:1182129058105012325>",
-        '' => "<:ok:1182120559916625971>",
-        '' => "<:paste:1182129062504841236>",
-        '' => "<:pause:1182129067697373298>",
-        '' => "<:pencil:1182129072445337692>",
-        '' => "<:pick:1182132978151866409>",
-        '' => "<:plane:1182129077495287818>",
-        '' => "<:planet:1182132980899139684>",
-        '' => "<:play:1182129079869251614>",
-        '' => "<:players:1182129203420864557>",
-        '' => "<:power:1182132985559003136>",
-        '' => "<:power:1182132985559003136>",
-        '' => "<:production:1182132992911613963>",
-        '' => "<:pvp:1182132995130400789>",
-        '' => "<:reddit:1182133001044361307>",
-        '' => "<:redo:1182133008384413736>",
-        '' => "<:refresh:1182133010586423387>",
-        '' => "<:resize:1182120953245868152>",
-        '' => "<:right:1182119750155915264>",
-        '' => "<:right_open:1182133015036575745>",
-        '' => "<:right_open:1182133015036575745>",
-        '' => "<:rotate:1182133018400399521>",
-        '' => "<:save:1182133023068655737>",
-        '' => "<:settings:1182133030073151508>",
-        '' => "<:spray:1182133032493252689>",
-        '' => "<:star:1182120776070070382>",
-        '' => "<:steam:1182133038054912020>",
-        '' => "<:survival:1182133046233809016>",
-        '' => "<:terminal:1182133050587484231>",
-        '' => "<:trash:1182133055008284814>",
-        '' => "<:tree:1182133057138987148>",
-        '' => "<:trello:1182133061236834375>",
-        '' => "<:turret:1182133068123873320>",
-        '' => "<:undo:1182133073454825512>",
-        '' => "<:units:1182133078022422579>",
-        '' => "<:up:1182120109221875802>",
-        '' => "<:upload:1182133085148561498>",
-        '' => "<:up_open:1182133079997960282>",
-        '⚠' => "<:warning:1182119952048726066>",
-        '' => "<:waves:1182133091570040873>",
-        '' => "<:wrench:1174277587493715979>",
-        '' => "<:zoom:1182133094090809406>",
-
-        '' => fluid(Fluid::Arkycite),
-        '' => fluid(Fluid::Cryofluid),
-        '' => fluid(Fluid::Cyanogen),
-        '' => fluid(Fluid::Gallium),
-        '' => fluid(Fluid::Hydrogen),
-        '' => fluid(Fluid::Neoplasm),
-        '' => fluid(Fluid::Nitrogen),
-        '' => fluid(Fluid::Oil),
-        '' => fluid(Fluid::Ozone),
-        '' => fluid(Fluid::Slag),
-        '' => fluid(Fluid::Water),
-        '' => item(Item::Beryllium),
-        '' => item(Item::BlastCompound),
-        '' => item(Item::Carbide),
-        '' => item(Item::Coal),
-        '' => item(Item::Copper),
-        '' => item(Item::DormantCyst),
-        '' => item(Item::FissileMatter),
-        '' => item(Item::Graphite),
-        '' => item(Item::Lead),
-        '' => item(Item::Metaglass),
-        '' => item(Item::Oxide),
-        '' => item(Item::PhaseFabric),
-        '' => item(Item::Plastanium),
-        '' => item(Item::Pyratite),
-        '' => item(Item::Sand),
-        '' => item(Item::Scrap),
-        '' => item(Item::Silicon),
-        '' => item(Item::SporePod),
-        '' => item(Item::SurgeAlloy),
-        '' => item(Item::Thorium),
-        '' => item(Item::Titanium),
-        '' => item(Item::Tungsten),
-
-    };
+    include!{concat!(env!("OUT_DIR"), "/to_discord")}
 
     /// Returns the emoji of a [`Fluid`]
     pub const fn fluid(f: Fluid) -> &'static str {
         match f {
-            Fluid::Arkycite => "<:arkycite:1144220710106038383>",
-            Fluid::Cryofluid => "<:cryofluid:1144220686018154599>",
-            Fluid::Cyanogen => "<:cyanogen:1144220681945489408>",
-            Fluid::Gallium => "<:gallium:1144220668238516264>",
-            Fluid::Hydrogen => "<:hydrogen:1144220658746798090>",
-            Fluid::Neoplasm => "<:neoplasm:1144220645794791505>",
-            Fluid::Nitrogen => "<:nitrogen:1144220641160077363>",
-            Fluid::Oil => "<:oil:1144220637448118353>",
-            Fluid::Ozone => "<:ozone:1144220628627497091>",
-            Fluid::Slag => "<:slag:1144220603671396352>",
-            Fluid::Water => "<:water:1144220582204944434>",
+            Fluid::Arkycite => named::ARKYCITE,
+            Fluid::Cryofluid => named::CRYOFLUID,
+            Fluid::Cyanogen => named::CYANOGEN,
+            Fluid::Gallium => named::GALLIUM,
+            Fluid::Hydrogen => named::HYDROGEN,
+            Fluid::Neoplasm => named::NEOPLASM,
+            Fluid::Nitrogen => named::NITROGEN,
+            Fluid::Oil => named::OIL,
+            Fluid::Ozone => named::OZONE,
+            Fluid::Slag => named::SLAG,
+            Fluid::Water => named::WATER,
         }
     }
 
     /// Returns the emoji of a [`Item`]
     pub const fn item(i: Item) -> &'static str {
         match i {
-            Item::Beryllium => "<:beryllium:1144220705739788288>",
-            Item::BlastCompound => "<:blastcompound:1144220701671305319>",
-            Item::Carbide => "<:carbide:1144220696927555584>",
-            Item::Coal => "<:coal:1144220692729036800>",
-            Item::Copper => "<:copper:1144220690216648704>",
-            Item::DormantCyst => "<:dormantcyst:1144220677994446928>",
-            Item::FissileMatter => "<:fissilematter:1144220673670131742>",
-            Item::Graphite => "<:graphite:1144220661137551400>",
-            Item::Lead => "<:lead:1144220654686699570>",
-            Item::Metaglass => "<:metaglass:1144220649901019206>",
-            Item::Oxide => "<:oxide:1144220632746295316>",
-            Item::PhaseFabric => "<:phasefabric:1144220626224156794>",
-            Item::Plastanium => "<:plastanium:1144220622403153971>",
-            Item::Pyratite => "<:pyratite:1144220617319657572>",
-            Item::Sand => "<:sand:1144220613880315934>",
-            Item::Scrap => "<:scrap:1144220611531505704>",
-            Item::Silicon => "<:silicon:1144220607710502922>",
-            Item::SporePod => "<:sporepod:1144220601205149777>",
-            Item::SurgeAlloy => "<:surgealloy:1144220597484789822>",
-            Item::Thorium => "<:thorium:1144220593068191784>",
-            Item::Titanium => "<:titanium:1144220588978749551>",
-            Item::Tungsten => "<:tungsten:1144220586382458970>",
+            Item::Beryllium => named::BERYLLIUM,
+            Item::BlastCompound => named::BLASTCOMPOUND,
+            Item::Carbide => named::CARBIDE,
+            Item::Coal => named::COAL,
+            Item::Copper => named::COPPER,
+            Item::DormantCyst => named::DORMANTCYST,
+            Item::FissileMatter => named::FISSILEMATTER,
+            Item::Graphite => named::GRAPHITE,
+            Item::Lead => named::LEAD,
+            Item::Metaglass => named::METAGLASS,
+            Item::Oxide => named::OXIDE,
+            Item::PhaseFabric => named::PHASEFABRIC,
+            Item::Plastanium => named::PLASTANIUM,
+            Item::Pyratite => named::PYRATITE,
+            Item::Sand => named::SAND,
+            Item::Scrap => named::SCRAP,
+            Item::Silicon => named::SILICON,
+            Item::SporePod => named::SPOREPOD,
+            Item::SurgeAlloy => named::SURGEALLOY,
+            Item::Thorium => named::THORIUM,
+            Item::Titanium => named::TITANIUM,
+            Item::Tungsten => named::TUNGSTEN,
         }
     }
 
@@ -605,4 +84,95 @@ pub mod mindustry {
         }
         o
     }
+}}};
 }
+
+#[cfg(feature = "build")]
+mod build {
+    use std::{
+        collections::HashMap,
+        fs::File,
+        path::PathBuf,
+        sync::{Arc, OnceLock},
+    };
+
+    use serenity::all::{Context, ShardManager};
+
+    pub fn load() {
+        tokio::runtime::Builder::new_current_thread()
+            .enable_all()
+            .build()
+            .unwrap()
+            .block_on(_load())
+    }
+
+    async fn _load() {
+        static SHARD_MNGR: OnceLock<Arc<ShardManager>> = OnceLock::new();
+        let tok = std::env::var("TOKEN")
+            .unwrap_or_else(|_| std::fs::read_to_string("token").expect("wher token"));
+        let f = poise::Framework::builder()
+            .options(poise::FrameworkOptions::default())
+            .setup(|c, _ready, _: &poise::Framework<(), anyhow::Error>| {
+                Box::pin(async move {
+                    build_files(c).await;
+                    ShardManager::shutdown_all(SHARD_MNGR.get().unwrap()).await;
+                    Ok(())
+                })
+            })
+            .build();
+
+        let mut c =
+            serenity::all::ClientBuilder::new(tok, serenity::all::GatewayIntents::non_privileged())
+                .framework(f)
+                .await
+                .unwrap();
+        SHARD_MNGR.set(c.shard_manager.clone()).unwrap();
+        c.start().await.unwrap()
+    }
+
+    async fn build_files(c: &Context) {
+        use std::io::Write;
+        let emojis = c.get_application_emojis().await.unwrap();
+        let of =
+            |f| File::create(PathBuf::from(std::env::var("OUT_DIR").unwrap()).join(f)).unwrap();
+
+        let mut f = of("to_discord");
+        _ = write!(
+            f,
+            r#"
+        /// to discord emojis
+        pub static TO_DISCORD: phf::Map<char, &str> = phf::phf_map! {{"#
+        );
+        let to_mindustry = LIST.iter().copied().collect::<HashMap<_, _>>();
+        for (str, char) in emojis
+            .iter()
+            .filter_map(|e| to_mindustry.get(&*e.name).map(|x| (e.to_string(), x)))
+        {
+            _ = write!(f, r#"'{char}' => "{str}","#);
+        }
+        _ = write!(f, "}};");
+
+        let mut f = of("to_mindustry_named");
+        for (str, char) in emojis
+            .iter()
+            .filter_map(|e| to_mindustry.get(&*e.name).map(|x| (&e.name, x)))
+        {
+            let str = str.to_owned().to_uppercase();
+            _ = write!(
+                f,
+                r#"#[doc = "{str} => {char}"] pub const {str}: &str = "{char}";"#
+            );
+        }
+
+        let mut f = of("to_discord_named");
+        for (k, v) in emojis.iter().map(|e| (e.name.to_string(), e.to_string())) {
+            let k = k.to_owned().to_uppercase();
+            _ = write!(f, r#"#[doc = "{v}"] pub const {k}: &str = "{v}";"#);
+        }
+    }
+
+    #[rustfmt::skip]
+    const LIST: &[(&str, char)] = &[("ship_assembler",''),("tungsten_wall",''),("blast_door",''),("ship_refabricator",''),("reinforced_liquid_container",''),("tank_assembler",''),("tank_fabricator",''),("tank_refabricator",''),("prime_refabricator",''),("malign",''),("mech_refabricator",''),("lustre",''),("reinforced_liquid_junction",''),("reinforced_bridge_conduit",''),("titan",''),("reinforced_liquid_tank",''),("reinforced_surge_wall_large",''),("reinforced_conduit",''),("smite",''),("reinforced_surge_wall",''),("basic_assembler_module",''),("tungsten_wall_large",''),("reinforced_pump",''),("shielded_wall",''),("ship_fabricator",''),("beryllium_wall_large",''),("carbide_wall_large",''),("breach",''),("sublimate",''),("beryllium_wall",''),("mech_fabricator",''),("reinforced_liquid_router",''),("mech_assembler",''),("afflict",''),("disperse",''),("scathe",''),("carbide_wall",''),("cleroi",''),("locus",''),("omura",''),("risso",''),("manifold",''),("collaris",''),("emanate",''),("anthicus",''),("spiroct",''),("tecta",''),("quell",''),("mace",''),("incite",''),("latum",''),("anthicus_missile",''),("oxynoe",''),("obviate",''),("alpha",''),("disrupt_missile",''),("renale",''),("assembly_drone",''),("vanquish",''),("avert",''),("precept",''),("scathe_missile",''),("quell_missile",''),("beta",''),("merui",''),("evoke",''),("aegires",''),("stell",''),("disrupt",''),("elude",''),("navanax",''),("conquer",''),("large_payload_mass_driver",''),("deconstructor",''),("reinforced_payload_conveyor",''),("constructor",''),("small_deconstructor",''),("reinforced_payload_router",''),("large_constructor",''),("ductbridge",''),("turbine_condenser",''),("core_citadel",''),("slag_heater",''),("shockwave_tower",''),("beam_link",''),("reinforced_vault",''),("phase_synthesizer",''),("cliff_crusher",''),("heat_source",''),("electric_heater",''),("beam_tower",''),("unit_cargo_loader",''),("slag_incinerator",''),("unit_repair_tower",''),("beam_node",''),("heat_router",''),("reinforced_container",''),("atmospheric_concentrator",''),("carbide_crucible",''),("chemical_combustion_chamber",''),("build_tower",''),("impact_drill",''),("pyrolysis_generator",''),("core_bastion",''),("eruption_drill",''),("large_plasma_bore",''),("plasma_bore",''),("neoplasia_reactor",''),("core_acropolis",''),("silicon_arcfurnace",''),("large_shield_projector",''),("flux_reactor",''),("regen_projector",''),("heat_redirector",''),("electrolyzer",''),("cyanogen_synthesizer",''),("surge_crucible",''),("oxidation_chamber",''),("radar",''),("phase_heater",''),("vent_condenser",''),("additive_reconstructor",''),("air_factory",''),("antumbra",''),("arc",''),("arkyid",''),("armored_conveyor",''),("armored_duct",''),("atrax",''),("battery",''),("battery_large",''),("blast_drill",''),("blast_mixer",''),("bridge_conduit",''),("bridge_conveyor",''),("bryde",''),("canvas",''),("coal_centrifuge",''),("combustion_generator",''),("conduit",''),("container",''),("conveyor",''),("copper_wall",''),("copper_wall_large",''),("core_foundation",''),("core_nucleus",''),("core_shard",''),("corvus",''),("crawler",''),("cryofluid_mixer",''),("cultivator",''),("cyclone",''),("cyerce",''),("dagger",''),("differential_generator",''),("diode",''),("disassembler",''),("distributor",''),("door",''),("door_large",''),("duct",''),("duo",''),("eclipse",''),("exponential_reconstructor",''),("flare",''),("force_projector",''),("foreshadow",''),("fortress",''),("fuse",''),("gamma",''),("graphite_press",''),("ground_factory",''),("hail",''),("horizon",''),("hyper_processor",''),("illuminator",''),("impact_reactor",''),("impulse_pump",''),("incinerator",''),("interplanetary_accelerator",''),("inverted_sorter",''),("item_source",''),("item_void",''),("junction",''),("kiln",''),("lancer",''),("large_logic_display",''),("laser_drill",''),("launch_pad",''),("liquid_container",''),("liquid_junction",''),("liquid_router",''),("liquid_source",''),("liquid_tank",''),("liquid_void",''),("logic_display",''),("logic_processor",''),("mass_driver",''),("mechanical_drill",''),("mechanical_pump",''),("mega",''),("meltdown",''),("melter",''),("memory_bank",''),("memory_cell",''),("mender",''),("mend_projector",''),("message",''),("micro_processor",''),("minke",''),("mono",''),("multiplicative_reconstructor",''),("multi_press",''),("naval_factory",''),("nova",''),("oct",''),("oil_extractor",''),("overdrive_dome",''),("overdrive_projector",''),("overflow_gate",''),("parallax",''),("payload_conveyor",''),("payload_loader",''),("payload_mass_driver",''),("payload_router",''),("payload_source",''),("payload_unloader",''),("payload_void",''),("phase_conduit",''),("phase_conveyor",''),("phase_wall",''),("phase_wall_large",''),("phase_weaver",''),("plastanium_compressor",''),("plastanium_conveyor",''),("plastanium_wall",''),("plastanium_wall_large",''),("plated_conduit",''),("pneumatic_drill",''),("poly",''),("power_node",''),("power_node_large",''),("pulsar",''),("pulse_conduit",''),("pulverizer",''),("pyratite_mixer",''),("quad",''),("quasar",''),("reign",''),("retusa",''),("ripple",''),("rotary_pump",''),("router",''),("rtg_generator",''),("salvo",''),("scatter",''),("scepter",''),("scorch",''),("scrap_wall",''),("scrap_wall_gigantic",''),("scrap_wall_huge",''),("scrap_wall_large",''),("segment",''),("sei",''),("separator",''),("shield_projector",''),("silicon_crucible",''),("silicon_smelter",''),("solar_panel",''),("solar_panel_large",''),("sorter",''),("spectre",''),("spore_press",''),("steam_generator",''),("surge_conveyor",''),("surge_smelter",''),("surge_tower",''),("surge_wall",''),("surge_wall_large",''),("swarmer",''),("switch",''),("tetrative_reconstructor",''),("thermal_generator",''),("thorium_reactor",''),("thorium_wall",''),("thorium_wall_large",''),("thruster",''),("titanium_conveyor",''),("titanium_wall",''),("titanium_wall_large",''),("toxopid",''),("tsunami",''),("underflow_gate",''),("unloader",''),("vault",''),("vela",''),("water_extractor",''),("wave",''),("world_cell",''),("world_message",''),("world_processor",''),("zenith",''),("add",''),("admin",''),("android",''),("attack",''),("book",''),("book_open",''),("box",''),("cancel",''),("chart_bar",''),("chat",''),("command_attack",''),("command_rally",''),("copy",''),("crafting",''),("defense",''),("diagonal",''),("discord",''),("distribution",''),("download",''),("down_open",''),("edit",''),("editor",''),("editor",''),("effect",''),("eraser",''),("exit",''),("export",''),("eye",''),("eye_off",''),("file",''),("file_image",''),("file_text",''),("file_text",''),("fill",''),("filter",''),("filters",''),("flip_x",''),("flip_y",''),("folder",''),("github",''),("github_square",''),("google_play",''),("grid",''),("hammer",''),("home",''),("host",''),("down",''),("image",''),("info",''),("info_circle",''),("itchio",''),("layers",''),("left",''),("left_open",''),("line",''),("link",''),("liquid",''),("list",''),("lock",''),("lock_open",''),("logic",''),("map",''),("move",''),("none",''),("ok",''),("paste",''),("pause",''),("pencil",''),("pick",''),("plane",''),("planet",''),("play",''),("players",''),("power",''),("power",''),("production",''),("pvp",''),("reddit",''),("redo",''),("refresh",''),("resize",''),("right",''),("right_open",''),("right_open",''),("rotate",''),("save",''),("settings",''),("spray",''),("star",''),("steam",''),("survival",''),("terminal",''),("trash",''),("tree",''),("trello",''),("turret",''),("undo",''),("units",''),("up",''),("upload",''),("up_open",''),("warning",'⚠'),("waves",''),("wrench",''),("zoom",''),("arkycite",''),("cryofluid",''),("cyanogen",''),("gallium",''),("hydrogen",''),("neoplasm",''),("nitrogen",''),("oil",''),("ozone",''),("slag",''),("water",''),("beryllium",''),("blastcompound",''),("carbide",''),("coal",''),("copper",''),("dormantcyst",''),("fissilematter",''),("graphite",''),("lead",''),("metaglass",''),("oxide",''),("phasefabric",''),("plastanium",''),("pyratite",''),("sand",''),("scrap",''),("silicon",''),("sporepod",''),("surgealloy",''),("thorium",''),("titanium",''),("tungsten",'')];
+}
+#[cfg(feature = "build")]
+pub use build::load;
