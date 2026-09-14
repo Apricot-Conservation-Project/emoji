@@ -90,14 +90,12 @@ pub mod mindustry {
 
 #[cfg(feature = "build")]
 mod build {
-    use std::{
-        collections::HashMap,
-        fs::File,
-        path::PathBuf,
-        sync::{Arc, OnceLock},
-    };
+    use std::{collections::HashMap, fs::File, path::PathBuf, sync::Arc};
 
-    use serenity::all::{Context, ShardManager};
+    use serenity::{
+        all::{prelude::EventHandler, Context},
+        model::event::FullEvent,
+    };
 
     pub fn load() {
         tokio::runtime::Builder::new_current_thread()
@@ -106,28 +104,42 @@ mod build {
             .unwrap()
             .block_on(_load())
     }
-
+    struct H {}
+    impl EventHandler for H {
+        fn dispatch<'life0, 'life1, 'life2, 'async_trait>(
+            &'life0 self,
+            c: &'life1 Context,
+            _event: &'life2 FullEvent,
+        ) -> ::core::pin::Pin<
+            Box<dyn ::core::future::Future<Output = ()> + ::core::marker::Send + 'async_trait>,
+        >
+        where
+            'life0: 'async_trait,
+            'life1: 'async_trait,
+            'life2: 'async_trait,
+            Self: 'async_trait,
+        {
+            Box::pin(async move {
+                match _event {
+                    FullEvent::Ready { .. } => {
+                        build_files(c).await;
+                        c.shutdown_all();
+                    }
+                    _ => {}
+                }
+            })
+        }
+    }
     async fn _load() {
-        static SHARD_MNGR: OnceLock<Arc<ShardManager>> = OnceLock::new();
         let tok = std::env::var("TOKEN")
             .unwrap_or_else(|_| std::fs::read_to_string("token").expect("wher token"));
-        let f = poise::Framework::builder()
-            .options(poise::FrameworkOptions::default())
-            .setup(|c, _ready, _: &poise::Framework<(), anyhow::Error>| {
-                Box::pin(async move {
-                    build_files(c).await;
-                    ShardManager::shutdown_all(SHARD_MNGR.get().unwrap()).await;
-                    Ok(())
-                })
-            })
-            .build();
-
-        let mut c =
-            serenity::all::ClientBuilder::new(tok, serenity::all::GatewayIntents::non_privileged())
-                .framework(f)
-                .await
-                .unwrap();
-        SHARD_MNGR.set(c.shard_manager.clone()).unwrap();
+        let mut c = serenity::Client::builder(
+            tok.parse().unwrap(),
+            serenity::all::GatewayIntents::non_privileged(),
+        )
+        .event_handler(Arc::new(H {}))
+        .await
+        .unwrap();
         c.start().await.unwrap()
     }
 
