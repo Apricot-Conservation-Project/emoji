@@ -21,6 +21,7 @@ serenity = { git = "https://github.com/serenity-rs/serenity", branch = "next", f
     "gateway",
     "model",
 ], default-features = false, optional = true }
+phf = { version = "0.14.0", features = ["phf_macros"] }
 # poise = { git = "https://github.com/serenity-rs/poise", branch = "serenity-next", optional = true }
 
 [features]
